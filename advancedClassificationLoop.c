@@ -1,5 +1,4 @@
 #include "NumClass.h"
-#include <math.h>
 
 int numberDigits(int number)
 {
@@ -12,42 +11,49 @@ int numberDigits(int number)
     return count;
 }
 
+int power(int base, int exponent)
+{
+    if (exponent == 0)
+    {
+        return 1;
+    }
+    int i, original = base;
+    for (i = 1; i < exponent; i++)
+    {
+        base *= original;
+    }
+    return base;
+}
+
 int isPalindrome(int number)
 {
-    int i, half, numberLength = numberDigits(number), reverse = 0, current = number;
-    if (numberLength == 1)
+    int reverse = 0;
+    int current = number;
+    while (current != 0)
+    {
+        reverse = reverse * 10 + current % 10;
+        current /= 10;
+    }
+    if (reverse == number)
     {
         return true;
     }
-    if (numberLength % 2 == 0)
+    return false;
+}
+
+int isArmstrong(int number)
+{
+    int currentDigit, current = number, sum = 0;
+    int numberLength = numberDigits(number);
+    while (current != 0)
     {
-        half = numberLength - numberLength / 2;
-    }
-    else
-    {
-        half = numberLength - numberLength / 2 - 1;
-    }
-    for (i = numberLength - 1; i > numberLength / 2; i--)
-    {
-        reverse += (current % 10) * pow(10, half - 1);
-        half--;
+        currentDigit = current % 10;
+        sum += power(currentDigit, numberLength);
         current /= 10;
     }
-    if (numberLength % 2 == 0)
+    if (sum == number)
     {
-        if (current == reverse)
-        {
-            return true;
-        }
-        return false;
+        return true;
     }
-    else
-    {
-        current /= 10;
-        if (current == reverse)
-        {
-            return true;
-        }
-        return false;
-    }
+    return false;
 }
