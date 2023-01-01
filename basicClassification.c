@@ -2,7 +2,7 @@
 
 int isPrime(int number)
 {
-    if (number <= 1)
+    if (number < 1)
     {
         return false;
     }

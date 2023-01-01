@@ -2,11 +2,11 @@
 
 int numberLength(int number)
 {
-    int count = 0, current = number;
-    while (current != 0)
+    int count = 0;
+    while (number != 0)
     {
         count++;
-        current /= 10;
+        number /= 10;
     }
     return count;
 }

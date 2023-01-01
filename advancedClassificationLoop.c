@@ -2,7 +2,7 @@
 
 int numberDigits(int number)
 {
-    int i, count = 0;
+    int count = 0;
     while (number != 0)
     {
         count++;
