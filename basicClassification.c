@@ -19,11 +19,18 @@ int isPrime(int number)
 
 int factorial(int number) 
 {
-    if (number == 0)
+    // if (number == 0)
+    // {
+    //     return 1;
+    // }
+    // return number * factorial (number - 1);
+    int fact = 1;
+    int i;
+    for (i = number; i > 0; i--)
     {
-        return 1;
+        fact *= 1;
     }
-    return number * factorial (number - 1);
+    return fact;
 }
 
 int isStrong(int number)
