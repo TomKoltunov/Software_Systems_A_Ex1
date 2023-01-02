@@ -37,7 +37,7 @@ int isStrong(int number)
 {
     int current = number;
     int sum = 0;
-    while (current != 0)
+    while (current > 0)
     {
         sum += factorial(current % 10);
         current /= 10;
