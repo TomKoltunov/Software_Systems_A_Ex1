@@ -17,8 +17,8 @@ int power(int base, int exponent)
     {
         return 1;
     }
-    int original = base;
-    for (int i = 1; i < exponent; i++)
+    int i, original = base;
+    for (i = 1; i <= exponent; i++)
     {
         base *= original;
     }
