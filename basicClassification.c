@@ -28,7 +28,7 @@ int factorial(int number)
     int i;
     for (i = number; i > 0; i--)
     {
-        fact *= 1;
+        fact *= i;
     }
     return fact;
 }
