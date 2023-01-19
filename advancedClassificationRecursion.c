@@ -13,21 +13,11 @@ int numberLength(int number)
 
 int power(int base, int exponent)
 {
-    // if (exponent == 0)
-    // {
-    //     return 1;
-    // }
-    // return base * power(base, exponent - 1);
     if (exponent == 0)
     {
         return 1;
     }
-    int i, original = base;
-    for (i = 1; i <= exponent; i++)
-    {
-        base *= original;
-    }
-    return base;
+    return base * power(base, exponent - 1);
 }
 
 int sumArmstrong(int number)
