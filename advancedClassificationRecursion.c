@@ -17,12 +17,7 @@ int power(int base, int exponent)
     {
         return 1;
     }
-    int i, original = base;
-    for (i = 1; i <= exponent; i++)
-    {
-        base *= original;
-    }
-    return base;
+    return base * power(base, exponent - 1);
 }
 
 int sumArmstrong(int number)
