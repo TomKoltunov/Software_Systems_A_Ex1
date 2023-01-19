@@ -36,17 +36,36 @@ int isPalindrome(int number)
     return false;
 }
 
+// int isArmstrong(int number)
+// {
+//     int currentDigit, current = number, sum = 0;
+//     int numberDigits = numberLength(number);
+//     while (current != 0)
+//     {
+//         currentDigit = current % 10;
+//         sum += power(currentDigit, numberDigits);
+//         current /= 10;
+//     }
+//     if (sum == number)
+//     {
+//         return true;
+//     }
+//     return false;
+// }
+
+
+int sumArmstrong(int number)
+{
+    if (number > 0)
+    {
+        return power(number % 10, numberLength(number)) + sumArmstrong(number / 10);
+    }
+    return 0;
+}
+
 int isArmstrong(int number)
 {
-    int currentDigit, current = number, sum = 0;
-    int numberDigits = numberLength(number);
-    while (current != 0)
-    {
-        currentDigit = current % 10;
-        sum += power(currentDigit, numberDigits);
-        current /= 10;
-    }
-    if (sum == number)
+    if (number == sumArmstrong(number))
     {
         return true;
     }
