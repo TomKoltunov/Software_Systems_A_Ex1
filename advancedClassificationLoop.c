@@ -1,6 +1,6 @@
 #include "NumClass.h"
 
-int numberDigits(int number)
+int numberLength(int number)
 {
     int count = 0;
     while (number != 0)
@@ -44,11 +44,11 @@ int isPalindrome(int number)
 int isArmstrong(int number)
 {
     int currentDigit, current = number, sum = 0;
-    int numberLength = numberDigits(number);
+    int numberDigits = numberLength(number);
     while (current != 0)
     {
         currentDigit = current % 10;
-        sum += power(currentDigit, numberLength);
+        sum += power(currentDigit, numberDigits);
         current /= 10;
     }
     if (sum == number)

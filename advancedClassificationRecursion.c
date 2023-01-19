@@ -31,7 +31,20 @@ int sumArmstrong(int number)
 
 int isArmstrong(int number)
 {
-    if (number == sumArmstrong(number))
+    // if (number == sumArmstrong(number))
+    // {
+    //     return true;
+    // }
+    // return false;
+    int currentDigit, current = number, sum = 0;
+    int numberDigits = numberLength(number);
+    while (current != 0)
+    {
+        currentDigit = current % 10;
+        sum += power(currentDigit, numberDigits);
+        current /= 10;
+    }
+    if (sum == number)
     {
         return true;
     }
